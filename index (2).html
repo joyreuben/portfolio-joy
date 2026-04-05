@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Joy Amarachi Okebugwu | EV4GH 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--green:#1a4a2e;--gmid:#2d7a4f;--glight:#c8e6d4;--cream:#f5f0e8;--ink:#0d1a0f;--amber:#c8780a;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+
+nav{background:var(--green);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.nav-name{font-family:'DM Serif Display',serif;color:#fff;font-size:16px;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{color:#a8d5b8;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:color .2s;cursor:pointer;}
+.nav-links a:hover{color:#fff;}
+
+.hero{background:var(--green);padding:80px 48px 96px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(#2d7a4f2a 1px,transparent 1px),linear-gradient(90deg,#2d7a4f2a 1px,transparent 1px);background-size:56px 56px;}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,#2d7a4f66,transparent 50%),radial-gradient(circle at 5% 85%,#1a4a2e99,transparent 40%);}
+.hero-inner{position:relative;z-index:2;max-width:600px;}
+.badge{display:inline-block;border:1px solid #c8e6d455;color:var(--glight);font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:32px;animation:fadeUp .6s .1s both;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(30px,4.5vw,52px);color:#fff;line-height:1.12;margin-bottom:20px;animation:fadeUp .6s .25s both;}
+.hero h1 em{font-style:italic;color:#a8d5b8;}
+.hero-role{font-size:13.5px;color:#a8d5b8;margin-bottom:36px;line-height:1.7;animation:fadeUp .6s .4s both;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;animation:fadeUp .6s .55s both;}
+.tag{background:#ffffff0f;border:1px solid #ffffff1a;color:#c8e6d4;font-size:11px;padding:6px 14px;border-radius:100px;}
+.theme-pill{display:inline-flex;align-items:center;gap:10px;background:#ffffff12;border:1px solid #ffffff1e;border-radius:100px;padding:9px 18px;color:#c8e6d4;font-size:12px;animation:fadeUp .6s .7s both;}
+.dot{width:7px;height:7px;background:#4ade80;border-radius:50%;display:inline-block;animation:pulse2 2s infinite;}
+.dna-wrap{position:relative;z-index:2;width:130px;flex-shrink:0;}
+@media(max-width:700px){.dna-wrap{display:none;}.hero{grid-template-columns:1fr;}}
+
+.sec{max-width:960px;margin:0 auto;padding:80px 48px;}
+.sec-dark{background:var(--green);padding:80px 0;}
+.sec-dark-inner{max-width:960px;margin:0 auto;padding:0 48px;}
+.sec-alt{background:#fff;padding:80px 0;}
+.sec-alt-inner{max-width:960px;margin:0 auto;padding:0 48px;}
+.lbl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gmid);font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.lbl::before{content:'';width:22px;height:1px;background:var(--gmid);}
+.lbl-light{color:#a8d5b8;}.lbl-light::before{background:#a8d5b8;}
+.lbl-amber{color:var(--amber);}.lbl-amber::before{background:var(--amber);}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.5vw,38px);line-height:1.2;color:var(--green);margin-bottom:28px;}
+h2.white{color:#fff;}
+p.body{font-size:15px;line-height:1.8;color:#2a3a2d;margin-bottom:18px;}
+.sec-tag{display:inline-block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:32px;font-weight:500;}
+.sec-tag.green{background:var(--glight);color:var(--green);}
+.sec-tag.amber{background:#fdf3e0;color:var(--amber);}
+.sec-tag.teal{background:#1a7a6e22;color:#4ade80;}
+
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+@media(max-width:680px){.cv-grid,.cn-grid,.adv-grid,.vis-grid,.proj-grid{grid-template-columns:1fr!important;gap:24px!important;}}
+.cv-block{margin-bottom:32px;}
+.cv-block-title{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gmid);font-weight:500;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #2d7a4f22;}
+.cv-item{margin-bottom:18px;}
+.cv-item-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:3px;flex-wrap:wrap;}
+.cv-item-role{font-size:14px;font-weight:500;color:var(--green);}
+.cv-item-date{font-size:11px;color:#9ab0a0;white-space:nowrap;}
+.cv-item-org{font-size:13px;color:var(--gmid);margin-bottom:5px;font-style:italic;}
+.cv-bullets{list-style:none;padding:0;}
+.cv-bullets li{font-size:13px;color:#4a6a50;line-height:1.6;padding-left:14px;position:relative;margin-bottom:3px;}
+.cv-bullets li::before{content:'·';position:absolute;left:0;color:var(--gmid);}
+
+.motiv-wrap{max-width:700px;}
+.motiv-body{font-size:15.5px;line-height:1.9;color:#2a3a2d;margin-bottom:20px;}
+.motiv-body strong{font-weight:500;color:var(--green);}
+
+.cn-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.stat-stack{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;}
+.stat-card{background:#ffffff0f;border:1px solid #ffffff18;border-radius:4px;padding:22px 26px;position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--amber);}
+.stat-n{font-family:'DM Serif Display',serif;font-size:42px;color:#a8d5b8;line-height:1;margin-bottom:6px;}
+.stat-l{font-size:12.5px;color:#c8e6d4aa;line-height:1.55;}
+.stat-l em{font-style:italic;}
+.stat-src{font-size:10px;color:#ffffff22;margin-top:6px;font-style:italic;}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.pillar{background:#ffffff08;border:1px solid #ffffff12;padding:24px 20px;}
+.p-num{font-family:'DM Serif Display',serif;font-size:40px;color:#2d7a4f;line-height:1;margin-bottom:10px;}
+.p-icon{font-size:15px;margin-bottom:8px;}
+.p-title{font-size:11px;font-weight:500;color:#a8d5b8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.p-text{font-size:12.5px;color:#c8e6d488;line-height:1.65;}
+
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:820px){.proj-grid{grid-template-columns:1fr 1fr;}}
+.proj-card{background:var(--cream);border:1px solid #2d7a4f18;border-radius:4px;padding:26px 22px;transition:box-shadow .25s,transform .25s;}
+.proj-card:hover{box-shadow:0 8px 32px #1a4a2e18;transform:translateY(-3px);}
+.proj-accent{width:32px;height:3px;border-radius:2px;margin-bottom:16px;}
+.acc-g{background:var(--gmid);}.acc-a{background:var(--amber);}.acc-t{background:#1a7a6e;}
+.proj-title{font-family:'DM Serif Display',serif;font-size:16px;color:var(--green);margin-bottom:10px;line-height:1.3;}
+.proj-desc{font-size:13px;color:#4a6a50;line-height:1.65;margin-bottom:16px;}
+.proj-stat{display:inline-block;background:var(--green);color:#a8d5b8;font-size:11px;padding:4px 10px;border-radius:2px;font-weight:500;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:28px;background:var(--green);}
+.stat-box{padding:28px 24px;text-align:center;}
+.stat-big{font-family:'DM Serif Display',serif;font-size:44px;color:#a8d5b8;line-height:1;}
+.stat-sub{font-size:12px;color:#c8e6d488;margin-top:8px;line-height:1.5;}
+
+.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.adv-card{border-left:3px solid var(--gmid);background:var(--cream);padding:20px 22px;border-radius:0 4px 4px 0;}
+.adv-card.amb{border-color:var(--amber);}
+.adv-org{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gmid);font-weight:500;margin-bottom:5px;}
+.adv-org.at{color:var(--amber);}
+.adv-title{font-size:13.5px;font-weight:500;color:var(--green);margin-bottom:4px;}
+.adv-date{font-size:11px;color:#9ab0a0;margin-bottom:8px;}
+.adv-desc{font-size:13px;color:#4a6a50;line-height:1.6;}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px;}
+.skill{background:#fff;border:1px solid #2d7a4f22;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--green);}
+
+.foot{background:var(--ink);padding:48px;}
+.foot-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.foot-name{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;}
+.foot-det{font-size:11.5px;color:#ffffff44;margin-top:4px;line-height:1.7;}
+.foot-badge{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#4ade8077;border:1px solid #4ade8022;padding:8px 16px;border-radius:2px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse2{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Joy Okebugwu</div>
+  <div class="nav-links">
+    <a onclick="go('cv')">CV</a>
+    <a onclick="go('motivation')">Motivation</a>
+    <a onclick="go('concept')">Concept Note</a>
+    <a onclick="go('research')">Research</a>
+    <a onclick="go('advocacy')">Advocacy</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="badge">EV4GH 2026 · Track 2 · Portfolio</div>
+    <h1>Biochemist.<br>Bioinformatician.<br><em>Health Systems Actor.</em></h1>
+    <p class="hero-role">Working at the intersection of genomic surveillance, antimicrobial resistance research, and digital health advocacy. Committed to ensuring African-generated evidence drives health policy, not merely supports it.</p>
+    <div class="hero-tags">
+      <span class="tag">Nigeria, Abuja</span>
+      <span class="tag">AMR Research</span>
+      <span class="tag">Digital Health</span>
+      <span class="tag">Africa CDC YiDHC</span>
+      <span class="tag">ASLM Ambassador</span>
+    </div>
+    <div class="theme-pill"><span class="dot"></span>&nbsp;HSR 2026: Platforms and Participation</div>
+  </div>
+  <div class="dna-wrap"><canvas id="dna" width="120" height="420"></canvas></div>
+</div>
+
+<!-- 01 CV -->
+<div class="sec" id="cv">
+  <div class="sec-tag green">01 · Curriculum Vitae</div>
+  <div class="lbl">Personal Details</div>
+  <div style="display:flex;flex-wrap:wrap;gap:32px;margin-bottom:48px;padding:24px;background:#fff;border-radius:4px;border:1px solid #2d7a4f14;">
+    <div><span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gmid);font-weight:500;display:block;margin-bottom:3px;">Name</span><span style="font-size:14px;">Joy Amarachi Okebugwu</span></div>
+    <div><span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gmid);font-weight:500;display:block;margin-bottom:3px;">Location</span><span style="font-size:14px;">Abuja, FCT Nigeria</span></div>
+    <div><span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gmid);font-weight:500;display:block;margin-bottom:3px;">Email</span><span style="font-size:14px;">okebugwujoy@gmail.com</span></div>
+    <div><span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gmid);font-weight:500;display:block;margin-bottom:3px;">Phone</span><span style="font-size:14px;">+2349061956559</span></div>
+    <div><span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gmid);font-weight:500;display:block;margin-bottom:3px;">EV Track</span><span style="font-size:14px;">Track 2 — Other Health System Professionals</span></div>
+  </div>
+  <div class="cv-grid">
+    <div>
+      <div class="cv-block">
+        <div class="cv-block-title">Education</div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">B.Sc. Biochemistry</span><span class="cv-item-date">Graduated 2024</span></div>
+          <div class="cv-item-org">Joseph Sarwuan Tarka University (JOSTUM), Makurdi</div>
+          <ul class="cv-bullets">
+            <li>GPA 4.4/5.0 · Top 5 graduating student · Best Seminar Presentation Award</li>
+            <li>Thesis: GC-MS and Quantitative Phytochemical Analysis of D'General Bitters, presented at NIPRD Abuja (Sep 2025) and ACS Nigeria Symposium (Jan 2025)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Advocacy and Health Systems Engagement</div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Youth in Digital Health Network (YiDHC)</span><span class="cv-item-date">Nov 2025 to Present</span></div>
+          <div class="cv-item-org">Africa CDC</div>
+          <ul class="cv-bullets">
+            <li>Promote equitable and resilient healthcare systems through stakeholder engagement, collaboration, and advocacy</li>
+            <li>Support continental policy conversations on digital health infrastructure and health systems strengthening</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Ambassador</span><span class="cv-item-date">Aug 2025 to Present</span></div>
+          <div class="cv-item-org">African Society for Laboratory Medicine (ASLM)</div>
+          <ul class="cv-bullets">
+            <li>Advocate for improved laboratory services, diagnostics equity, and public health outcomes across Africa</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Secretary, ACS JOSTUM Chapter</span><span class="cv-item-date">Feb 2024 to Nov 2024</span></div>
+          <div class="cv-item-org">American Chemical Society</div>
+          <ul class="cv-bullets">
+            <li>Led Green Chemistry Day and science communication initiatives; authored grant proposals for community outreach</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Project Manager Volunteer</span><span class="cv-item-date">Jan 2021 to Jul 2023</span></div>
+          <div class="cv-item-org">Beulah Future Leaders Foundation</div>
+          <ul class="cv-bullets">
+            <li>Coordinated youth empowerment programmes through capacity building, mentorship, and community engagement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cv-block">
+        <div class="cv-block-title">Research and Technical Experience</div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Lab Intern</span><span class="cv-item-date">Sep 2025 to Present</span></div>
+          <div class="cv-item-org">NIPRD Abuja</div>
+          <ul class="cv-bullets">
+            <li>Conduct research on plant extracts to isolate and characterise bioactive compounds for pharmacological studies</li>
+            <li>Design phytochemical screening protocols; prepare research reports</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Research Intern</span><span class="cv-item-date">Jan 2024 to Nov 2024</span></div>
+          <div class="cv-item-org">Iwadii Research Lab, JOSTUM</div>
+          <ul class="cv-bullets">
+            <li>Purified 50+ DNA samples at 98% purity; conducted electrophoresis and sequencing for 30+ samples</li>
+            <li>Analysed sequencing data using NCBI BLAST to support genomic research</li>
+          </ul>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-head"><span class="cv-item-role">Diagnostic Lab Intern</span><span class="cv-item-date">Feb 2022 to Jul 2022</span></div>
+          <div class="cv-item-org">Tanimu Foundation Diagnostics Laboratory</div>
+          <ul class="cv-bullets">
+            <li>Assisted diagnostic tests for 50+ patients weekly; maintained integrity across 100+ test entries</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Skills</div>
+        <div style="margin-bottom:8px;"><span style="font-size:11px;font-weight:500;color:var(--green);">Bioinformatics: </span><span style="font-size:12.5px;color:#4a6a50;">Python, BioPython, R, NCBI BLAST, GC-MS, FASTA/FASTQ</span></div>
+        <div style="margin-bottom:8px;"><span style="font-size:11px;font-weight:500;color:var(--green);">Machine Learning: </span><span style="font-size:12.5px;color:#4a6a50;">Random Forest, Logistic Regression, Gradient Boosting, Pandas, Seaborn</span></div>
+        <div><span style="font-size:11px;font-weight:500;color:var(--green);">Soft Skills: </span><span style="font-size:12.5px;color:#4a6a50;">Science communication, stakeholder engagement, grant writing, policy advocacy</span></div>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Selected Certifications</div>
+        <ul class="cv-bullets">
+          <li>Data Science, ALX (Sep 2025)</li>
+          <li>Fundamentals of Data Science in Precision Medicine, Stanford Medicine (May 2025)</li>
+          <li>Biology Meets Programming, UC San Diego (Mar 2025)</li>
+          <li>Carbon Capture, Utilization and Storage, ACS (Nov 2024)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 MOTIVATION -->
+<div class="sec-alt" id="motivation">
+  <div class="sec-alt-inner">
+    <div class="sec-tag amber">02 · Motivation Statement</div>
+    <div class="lbl lbl-amber">What EV4GH Means to Me (232 words)</div>
+    <h2>Why I am applying</h2>
+    <div class="motiv-wrap">
+      <p class="motiv-body">As a Nigerian biochemistry graduate working at the intersection of laboratory science, genomics, and digital health, I have become increasingly aware that <strong>generating evidence is not the same as influencing health systems.</strong> Through my work on antimicrobial resistance (AMR) in Salmonella Typhi and E. coli, I have seen how critical data on drug resistance often fails to translate into treatment guidelines or policy decisions. This gap is not merely technical. It is shaped by power, systems, and the disconnect between knowledge production and decision-making.</p>
+      <p class="motiv-body">The EV4GH 2026 venture represents an opportunity to move beyond technical expertise and develop the skills required to engage with these broader dynamics. As a member of the Youth in Digital Health Network (YiDHC) under Africa CDC and Ambassador for the African Society for Laboratory Medicine, I have seen firsthand that advocacy and stakeholder engagement are as essential as evidence itself. I am drawn to EV4GH's focus on power-sensitive leadership and challenging dominant global health narratives, and motivated to contribute perspectives grounded in African health system realities.</p>
+      <p class="motiv-body">Participation in EV4GH will strengthen my ability to translate genomic and data-driven insights into actionable health system reforms. It will equip me with the tools to engage policymakers, advocate for more inclusive and context-sensitive approaches to surveillance, and contribute to shaping more equitable global health agendas.</p>
+      <p class="motiv-body">Ultimately, I see EV4GH not just as a learning opportunity, but as a platform to amplify my impact as a health systems actor committed to improving infectious disease surveillance and response in Nigeria and across Africa.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 03 CONCEPT NOTE -->
+<div class="sec-dark" id="concept">
+  <div class="sec-dark-inner">
+    <div class="sec-tag teal">03 · Concept Note</div>
+    <div class="lbl lbl-light">What Global Health Problem I Want to Address</div>
+    <h2 class="white">Strengthening Infectious Disease Surveillance in Africa Through Genomic Intelligence</h2>
+    <p style="font-size:12px;color:#a8d5b8;font-style:italic;margin-bottom:40px;">HSR 2026 Theme: Platforms and Participation — Harnessing digital technologies and honouring social contracts</p>
+    <div class="cn-grid">
+      <div>
+        <div style="font-size:12px;font-weight:500;color:#a8d5b8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">The Problem</div>
+        <p style="font-size:14.5px;color:#c8e6d4;line-height:1.8;margin-bottom:14px;">Africa bears a disproportionate burden of infectious diseases including malaria, typhoid, and antimicrobial-resistant (AMR) infections, yet contributes only a small fraction of the genomic and surveillance data that informs global health policy. This is not simply a data scarcity problem, but a systems failure shaped by weak laboratory infrastructure, fragmented digital platforms, and global knowledge hierarchies that undervalue locally generated evidence.</p>
+        <p style="font-size:14.5px;color:#c8e6d4aa;line-height:1.8;margin-bottom:32px;">In Nigeria, I have seen this disconnect firsthand. My research on Salmonella Typhi isolates identified that 63.5% carry dual quinolone resistance mutations, indicating a high likelihood of ciprofloxacin treatment failure. Similar gaps exist in my work on E. coli AMR prediction and malaria surveillance: data is generated, but not meaningfully integrated into the health system.</p>
+        <div style="font-size:12px;font-weight:500;color:#a8d5b8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">My Role and EV4GH's Contribution</div>
+        <p style="font-size:14.5px;color:#c8e6d4;line-height:1.8;margin-bottom:14px;">As a member of the YiDHC under Africa CDC and Ambassador for ASLM, I actively contribute to conversations on diagnostic equity and digital health governance. A critical gap remains: navigating the power dynamics that shape whether evidence influences policy.</p>
+        <p style="font-size:14.5px;color:#c8e6d4aa;line-height:1.8;">EV4GH 2026 offers a unique platform to develop the skills and networks needed to translate genomic intelligence into health system reform, and to ensure that African-generated data drives decisions in global health, not merely supports them.</p>
+      </div>
+      <div>
+        <div class="stat-stack">
+          <div class="stat-card"><div class="stat-n">63.5%</div><div class="stat-l">of Nigerian <em>Salmonella</em> Typhi isolates carry dual QRDR mutations, signalling high risk of ciprofloxacin treatment failure</div><div class="stat-src">Joy Okebugwu, Genomic Epidemiology Study, 2025</div></div>
+          <div class="stat-card"><div class="stat-n">99%</div><div class="stat-l">accuracy of Random Forest AMR prediction model trained on Nigerian <em>E. coli</em> genomic data</div><div class="stat-src">Joy Okebugwu, ML-AMR Project, 2025</div></div>
+        </div>
+        <div style="font-size:12px;font-weight:500;color:#a8d5b8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;">The Vision: Three-Level Approach</div>
+        <div class="pillars">
+          <div class="pillar"><div class="p-num">01</div><div class="p-icon">🧬</div><div class="p-title">Data</div><div class="p-text">Expand WGS capacity and open-access African genomic databases to reduce reliance on external reference data.</div></div>
+          <div class="pillar"><div class="p-num">02</div><div class="p-icon">🖥️</div><div class="p-title">Platforms</div><div class="p-text">Build interoperable digital surveillance systems linking lab, clinical, and epidemiological data via ML.</div></div>
+          <div class="pillar"><div class="p-num">03</div><div class="p-icon">📋</div><div class="p-title">Policy</div><div class="p-text">Create structured pathways for translating surveillance findings into updated guidelines and AMR stewardship.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div class="sec" id="research">
+  <div class="lbl">Research Portfolio</div>
+  <h2>Three projects. One urgent question.</h2>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-accent acc-g"></div>
+      <div class="proj-title">Fluoroquinolone Resistance in Salmonella Typhi</div>
+      <div class="proj-desc">Analysed 104 whole genome sequences from Nigerian isolates. All belonged to MDR genotype 3.2.1. Identified dual QRDR mutations in 63.5% of isolates, signalling imminent ciprofloxacin treatment failure.</div>
+      <span class="proj-stat">AUROC 1.00 · 99% accuracy</span>
+    </div>
+    <div class="proj-card">
+      <div class="proj-accent acc-a"></div>
+      <div class="proj-title">AMR Prediction in E. coli (Nigerian Isolates)</div>
+      <div class="proj-desc">Applied Random Forest, Logistic Regression, and Gradient Boosting to genomic data. Predicted resistance across 10 antibiotic classes with 99% accuracy. Visualised regional AMR trends using heatmaps.</div>
+      <span class="proj-stat">99% accuracy · F1 = 0.99</span>
+    </div>
+    <div class="proj-card">
+      <div class="proj-accent acc-t"></div>
+      <div class="proj-title">Malaria Surveillance Data Pipeline</div>
+      <div class="proj-desc">Built a Python-based tool tracking malaria case trends using open Nigerian datasets, demonstrating scalable public health surveillance at low cost using Pandas and Seaborn.</div>
+      <span class="proj-stat">Open-source · Python</span>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-big">104</div><div class="stat-sub">whole genome sequences analysed from Nigerian isolates</div></div>
+    <div class="stat-box"><div class="stat-big">3</div><div class="stat-sub">infectious disease threats studied: typhoid, E. coli, malaria</div></div>
+    <div class="stat-box"><div class="stat-big">2x</div><div class="stat-sub">presented at national conferences: NISA 2025 and NIPRD Abuja 2025</div></div>
+  </div>
+</div>
+
+<!-- ADVOCACY -->
+<div class="sec-alt" id="advocacy">
+  <div class="sec-alt-inner">
+    <div class="lbl">Advocacy and Engagement</div>
+    <h2>Beyond the laboratory</h2>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-org">Africa CDC</div>
+        <div class="adv-title">Youth in Digital Health Network (YiDHC)</div>
+        <div class="adv-date">Nov 2025 to Present</div>
+        <div class="adv-desc">Promote equitable and resilient healthcare systems through stakeholder engagement, collaboration, and advocacy. Support continental policy conversations on digital health infrastructure and health systems strengthening.</div>
+      </div>
+      <div class="adv-card amb">
+        <div class="adv-org at">ASLM</div>
+        <div class="adv-title">Ambassador, African Society for Laboratory Medicine</div>
+        <div class="adv-date">Aug 2025 to Present</div>
+        <div class="adv-desc">Advocate for improved laboratory services and diagnostics equity across Africa. Facilitate stakeholder engagement and knowledge sharing to advance laboratory medicine and public health outcomes.</div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-org">Science Communication</div>
+        <div class="adv-title">ACS JOSTUM Chapter, Secretary</div>
+        <div class="adv-date">Feb 2024 to Nov 2024</div>
+        <div class="adv-desc">Led Green Chemistry Day and public science initiatives. Managed grant proposals supporting community outreach and science education beyond campus.</div>
+      </div>
+      <div class="adv-card amb">
+        <div class="adv-org at">Community</div>
+        <div class="adv-title">Project Manager Volunteer, Beulah Future Leaders Foundation</div>
+        <div class="adv-date">Jan 2021 to Jul 2023</div>
+        <div class="adv-desc">Coordinated leadership and educational programmes aimed at empowering young people through capacity building, mentorship, and community engagement.</div>
+      </div>
+    </div>
+    <div style="margin-top:40px;">
+      <div class="lbl">Skills and Tools</div>
+      <div class="skills-wrap">
+        <span class="skill">Python</span><span class="skill">R</span><span class="skill">BioPython</span>
+        <span class="skill">Random Forest</span><span class="skill">Scikit-learn</span>
+        <span class="skill">NCBI BLAST</span><span class="skill">GC-MS</span>
+        <span class="skill">DNA Extraction</span><span class="skill">Electrophoresis</span>
+        <span class="skill">Pandas and Seaborn</span><span class="skill">Git and GitHub</span>
+        <span class="skill">Science Communication</span>
+        <span class="skill">Policy Advocacy</span><span class="skill">Stakeholder Engagement</span>
+        <span class="skill">Grant Writing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-name">Joy Amarachi Okebugwu</div>
+      <div class="foot-det">Abuja, Nigeria<br>okebugwujoy@gmail.com · +2349061956559</div>
+    </div>
+    <div class="foot-badge">EV4GH 2026 · Track 2 Applicant</div>
+  </div>
+</div>
+
+<script>
+function go(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+const canvas=document.getElementById('dna'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
+let t=0;
+function drawDNA(){
+  ctx.clearRect(0,0,W,H);
+  const cx=W/2,amp=38,freq=0.022,nc=14,sp=H/(nc+1);
+  for(let i=0;i<=nc+1;i++){
+    const y=i*sp,ph=y*freq+t,x1=cx+Math.sin(ph)*amp,x2=cx+Math.sin(ph+Math.PI)*amp;
+    ctx.strokeStyle=`rgba(200,230,212,${0.15+0.15*Math.abs(Math.sin(ph))})`;
+    ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x1,y);ctx.lineTo(x2,y);ctx.stroke();
+    if(i>0&&i<=nc){
+      const hi=Math.abs(Math.sin(ph))>0.85,r=hi?5.5:3.5;
+      ctx.beginPath();ctx.arc(x1,y,r,0,Math.PI*2);ctx.fillStyle=hi?'#4ade80':'#a8d5b8';ctx.fill();
+      ctx.beginPath();ctx.arc(x2,y,r,0,Math.PI*2);ctx.fillStyle=hi?'#c8780a':'#a8d5b8';ctx.fill();
+    }
+  }
+  ['rgba(168,213,184,0.5)','rgba(168,213,184,0.3)'].forEach((col,si)=>{
+    ctx.strokeStyle=col;ctx.lineWidth=1.5;ctx.beginPath();
+    for(let y=0;y<=H;y+=2){const x=cx+Math.sin(y*freq+t+(si?Math.PI:0))*amp;y===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+    ctx.stroke();
+  });
+  t+=0.018;requestAnimationFrame(drawDNA);
+}
+drawDNA();
+</script>
+</body>
+</html>
